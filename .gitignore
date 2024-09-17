@@ -10,7 +10,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-/[Ppackages]/
+/[Pp]ackages/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -56,6 +56,7 @@ ExportedObj/
 *.mdb.meta
 *.unity.meta
 *.asset.meta
+*.asset
 
 # Unity3D generated file on crash reports
 sysinfo.txt
