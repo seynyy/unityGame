@@ -52,8 +52,8 @@ namespace Entity.Enemy
             var patrolPoints = new List<Vector2>();
             for (int i = 0; i < numberOfPoints; i++)
             {
-                var randomPoint = Random.insideUnitCircle * 5 +
-                                  new Vector2(transform.position.x, transform.position.y);
+                var randomPoint = Random.insideUnitCircle * 15 +
+                                  new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
                 patrolPoints.Add(randomPoint);
             }
             return patrolPoints;

@@ -35,12 +35,14 @@ namespace Entity.Player
 
             _rb.velocity = new Vector2(_speedX, _speedY).normalized * moveSpeed;
 
-            if (!Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 1) &&
-                !Mathf.Approximately(Input.GetAxisRaw("Horizontal"), -1) &&
-                !Mathf.Approximately(Input.GetAxisRaw("Vertical"), 1) &&
-                !Mathf.Approximately(Input.GetAxisRaw("Vertical"), -1)) return;
-            _animator.SetFloat(LastHorizontal, Input.GetAxisRaw("Horizontal"));
-            _animator.SetFloat(LastVertical, Input.GetAxisRaw("Vertical"));
+            if (Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 1) ||
+                Mathf.Approximately(Input.GetAxisRaw("Horizontal"), -1) ||
+                Mathf.Approximately(Input.GetAxisRaw("Vertical"), 1) ||
+                Mathf.Approximately(Input.GetAxisRaw("Vertical"), -1))
+            {
+                _animator.SetFloat(LastHorizontal, Input.GetAxisRaw("Horizontal"));
+                _animator.SetFloat(LastVertical, Input.GetAxisRaw("Vertical"));
+            }
         }
 
         public void OnColliderEnter2D(Collider2D other)
